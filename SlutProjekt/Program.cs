@@ -4,7 +4,7 @@ Enemy enemy = new Enemy();
 
 
 Console.WriteLine(@$"
-Välkommen {player.Name} till fight arenan här möter du bossar och kan levla upp i rank
+Välkommen {player.PName} till fight arenan här möter du bossar och kan levla upp i rank
 
 1: FIGHTAS mot {enemy.Name}
 2: kolla din information
@@ -12,5 +12,10 @@ Välkommen {player.Name} till fight arenan här möter du bossar och kan levla u
 
 skriv in siffran på det du vill ska hända!
 ");
+string MenyVal = Console.ReadLine();
 
+if ()
+{
+    
+}
 Console.ReadLine();

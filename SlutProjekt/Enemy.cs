@@ -1,20 +1,10 @@
 public class Enemy : Fighter
 {
-    public List<string> Attacks;
 
-    public Enemy() : base()
-    {
-        List<string> enemyNames = new List<string> { "Oscar", "Anton", "Martin", "Mask", "Sten", "Elis" }; //Lista med namn
-        Random rand = new Random();
-        Name = enemyNames[rand.Next(enemyNames.Count)];  //Slumpmässigt namn från listan
-        
-        Attacks = new List<string> { "Slash", "Punch", "Kick", "Headbut", "throws chair" }; //lista med olika attacker
-    }
 
     public void chooseAction(Fighter target)
     {
-        Random random = new Random();
-        string chosenAttack = Attacks[random.Next(Attacks.Count)];
+        string chosenAttack = Attacks[Random.Shared.Next(Attacks.Count)];
 
         target.TakeDamage(Damage);
 
