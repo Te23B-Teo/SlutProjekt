@@ -14,7 +14,7 @@ skriv in siffran på det du vill ska hända!
 ");
 string MenyVal = Console.ReadLine();
 
-if ()
+if (MenyVal == "1")
 {
     
 }
