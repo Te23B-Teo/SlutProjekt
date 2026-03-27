@@ -18,34 +18,41 @@ skriv in siffran på det du vill ska hända!
 
     if (MenyVal == "1")
     {
-        Fighter enemy;
-
-        int fighterType = Random.Shared.Next(0,2);
-
-        if (fighterType == 0)
+        while (true)
         {
-            enemy = new Enemy();
+            Fighter enemy;
+
+            int fighterType = Random.Shared.Next(0, 2);
+
+            if (fighterType == 0)
+            {
+                enemy = new Enemy();
+            }
+            else
+            {
+                enemy = new Enemy2();
+            }
+
+            Console.WriteLine($"Du möter {enemy.Name}!");
+            enemy.chooseAction(player);
+
+            Console.ReadLine();
+            if (player.Health > 0 && enemy.Health <= 0)
+            {
+                Console.WriteLine("Du vann!");
+
+                player.GainXp(50);
+                player.LevelUp();
+                break;
+            }
+
+            else if (player.Health <= 0)
+            {
+                Console.WriteLine("Du förlorade...");
+                break;
+            }
+
         }
-        else
-        {
-            enemy = new Enemy2();
-        }
-
-        Console.WriteLine($"Du möter {enemy.Name}!");
-        enemy.chooseAction(player);
-
-        Console.ReadLine();
-        if (player.Health > 0 && enemy.Health <= 0)
-{
-    Console.WriteLine("Du vann!");
-
-    player.GainXp(50);
-    player.LevelUp();   
-}
-else if (player.Health <= 0)
-{
-    Console.WriteLine("Du förlorade...");
-}
     }
 
 
@@ -53,7 +60,11 @@ else if (player.Health <= 0)
 
     else if (MenyVal == "2")
     {
-        Console.WriteLine($"{player.Name}   dessa quote har du i lager {player.Quotes}");
+        Console.WriteLine($"{player.Name}, Du har {player.Xp} Xp och är i level {player.Level}");
+        for (int i = player.Quotes.Count - 1; i >= 0; i--)
+{
+    Console.WriteLine(player.Quotes[i]);
+}
     }
 
 
@@ -63,9 +74,9 @@ else if (player.Health <= 0)
     {
         while (true)
         {
-        Console.WriteLine("skriv in vad du vill säga för quotes! skriv avsluta om du vill tillbaka till menyn");
-        string QuoteVal = Console.ReadLine().ToLower();
-        if(QuoteVal == "avsluta")
+            Console.WriteLine("skriv in vad du vill säga för quotes! skriv avsluta om du vill tillbaka till menyn");
+            string QuoteVal = Console.ReadLine().ToLower();
+            if (QuoteVal == "avsluta")
             {
                 break;
             }
