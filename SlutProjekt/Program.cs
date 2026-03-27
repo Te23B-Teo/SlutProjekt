@@ -4,7 +4,7 @@ Player player = new Player();
 while (true)
 {
     Console.WriteLine(@$"
-Välkommen {player.PName} till fight arenan här möter du bossar och kan levla upp i rank
+Välkommen {player.Name} till fight arenan här möter du bossar och kan levla upp i rank
 
 1: FIGHTAS!!!!!
 2: kolla din information
@@ -50,7 +50,7 @@ else if (player.Health <= 0)
 
     else if (MenyVal == "2")
     {
-        Console.WriteLine($"{player.PName}");
+        Console.WriteLine($"{player.Name}");
     }
     else if (MenyVal == "3")
     {
@@ -71,6 +71,10 @@ else if (player.Health <= 0)
     else if (MenyVal == "4")
     {
         break;
+    }
+    else
+    {
+        Console.WriteLine($"{MenyVal}: Det där är inget alternativ!");
     }
 
 }

@@ -2,18 +2,9 @@ public class Enemy : Fighter   // mer enemy type 1
 {
 
 
-    public void chooseAction(Fighter target)
+    public override void chooseAction(Fighter target)
     {
-        string chosenAttack = Attacks[Random.Shared.Next(Attacks.Count)];
-
-        target.TakeDamage(Damage);
-
-        Console.WriteLine($"{Name} använder {chosenAttack} på {target.Name} för {Damage} skada!");
-        Console.WriteLine($"{target.Name} har {target.Health} hälsa kvar.");
-
-        if (target.Health <= 0)
-        {
-            Console.WriteLine($"{target.Name} är besegrad!");
-        }
+        Console.WriteLine($" {Name}");
+    target.TakeDamage(Damage + 5);
     }
 }

@@ -40,5 +40,6 @@ public class Fighter
         target.TakeDamage(Damage);
 
         Console.WriteLine($"{Name} använder {chosenAttack} på {target.Name} för {Damage} skada!");
+        Console.WriteLine($"{target.Name} har {target.Health} hälsa kvar.");
     }
 }
