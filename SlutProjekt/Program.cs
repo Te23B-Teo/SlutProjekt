@@ -15,6 +15,7 @@ skriv in siffran på det du vill ska hända!
 ");
     string MenyVal = Console.ReadLine();
 
+
     if (MenyVal == "1")
     {
         Fighter enemy;
@@ -48,10 +49,16 @@ else if (player.Health <= 0)
     }
 
 
+
+
     else if (MenyVal == "2")
     {
-        Console.WriteLine($"{player.Name}");
+        Console.WriteLine($"{player.Name}   dessa quote har du i lager {player.Quotes}");
     }
+
+
+
+
     else if (MenyVal == "3")
     {
         while (true)
@@ -68,6 +75,11 @@ else if (player.Health <= 0)
             }
         }
     }
+
+
+
+
+
     else if (MenyVal == "4")
     {
         break;
