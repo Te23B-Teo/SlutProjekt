@@ -32,4 +32,13 @@ public class Fighter
             Health -= actualDamage;
         }
     }
+
+     public virtual void chooseAction(Fighter target)
+    {
+        string chosenAttack = Attacks[Random.Shared.Next(Attacks.Count)];
+
+        target.TakeDamage(Damage);
+
+        Console.WriteLine($"{Name} använder {chosenAttack} på {target.Name} för {Damage} skada!");
+    }
 }

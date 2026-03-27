@@ -1,4 +1,4 @@
-public class Player
+public class Player : Fighter
 {
     public string PName;
     public int PDamage;
@@ -6,7 +6,7 @@ public class Player
     public int Level;
     public int Xp;
     public int PHealth;
-    public List<string> Quotes;
+    public List<string> Quotes = new List<string>();
 
     
     public Player() : base()
@@ -22,7 +22,16 @@ public class Player
 
     public void LevelUp()
     {
+        if (Xp >= 100)
+    {
         Level++;
+        Xp -= 100;
+
+        PDamage += 2;
+        PHealth += 10;
+
+        Console.WriteLine($"Level up! Du är nu level {Level}");
+    }
     }
 
     public void GainXp(int amount)

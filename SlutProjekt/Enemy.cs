@@ -1,4 +1,4 @@
-public class Enemy : Fighter
+public class Enemy : Fighter   // mer enemy type 1
 {
 
 
