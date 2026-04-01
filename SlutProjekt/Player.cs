@@ -31,5 +31,6 @@ public class Player : Fighter
     public void GainXp(int amount)
     {
         Xp += amount;
+        Console.WriteLine($"Du fick {amount} xp");
     }
 }

@@ -18,8 +18,6 @@ skriv in siffran på det du vill ska hända!
 
     if (MenyVal == "1")
     {
-        while (true)
-        {
             Fighter enemy;
 
             int fighterType = Random.Shared.Next(0, 2);
@@ -34,22 +32,25 @@ skriv in siffran på det du vill ska hända!
             }
 
             Console.WriteLine($"Du möter {enemy.Name}!");
+
+
+        while (player.Health > 0 && enemy.Health > 0)
+        {
             enemy.chooseAction(player);
+            player.chooseAction(enemy);
+            player.GainXp(5);
 
             Console.ReadLine();
-            if (player.Health > 0 && enemy.Health <= 0)
+            if (player.Health > 0)
             {
                 Console.WriteLine("Du vann!");
-
                 player.GainXp(50);
                 player.LevelUp();
-                break;
             }
 
-            else if (player.Health <= 0)
+            else
             {
                 Console.WriteLine("Du förlorade...");
-                break;
             }
 
         }
