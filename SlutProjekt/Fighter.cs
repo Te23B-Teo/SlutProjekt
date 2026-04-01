@@ -33,7 +33,7 @@ public class Fighter
         }
     }
 
-     public virtual void chooseAction(Fighter target)
+     public void chooseAction(Fighter target)
     {
         string chosenAttack = Attacks[Random.Shared.Next(Attacks.Count)];
 
