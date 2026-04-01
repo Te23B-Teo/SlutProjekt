@@ -34,23 +34,39 @@ skriv in siffran på det du vill ska hända!
             Console.WriteLine($"Du möter {enemy.Name}!");
 
 
-        while (player.Health > 0 && enemy.Health > 0)
+        while (true)
         {
+            Console.Write("loading");
+            for(int i = 0; i<5;i++)
+            {
+            Console.Write(".");
+            Thread.Sleep(100);
+            }
+            Console.Clear();
+            Console.WriteLine($"{player.Name}: defence {player.Defense}");
+            Console.WriteLine($"{enemy.Name}: defence {enemy.Defense}");
+            Console.WriteLine("");
             enemy.chooseAction(player);
             player.chooseAction(enemy);
             player.GainXp(5);
+            
+                
 
             Console.ReadLine();
-            if (player.Health <= 0)
+            if (enemy.Health <= 0)
             {
                 Console.WriteLine("Du vann!");
                 player.GainXp(50);
                 player.LevelUp();
+                player.ResetStats();
+                enemy.ResetStats();
+                break;
             }
 
-            else
+            else if(player.Health <= 0)
             {
                 Console.WriteLine("Du förlorade...");
+                break;
             }
 
         }
