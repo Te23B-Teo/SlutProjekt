@@ -41,7 +41,7 @@ skriv in siffran på det du vill ska hända!
             player.GainXp(5);
 
             Console.ReadLine();
-            if (player.Health > 0)
+            if (player.Health <= 0)
             {
                 Console.WriteLine("Du vann!");
                 player.GainXp(50);

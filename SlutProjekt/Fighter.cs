@@ -1,6 +1,5 @@
 public class Fighter
 {
-    public static Random Random = new Random();
 
     public string Name;
     public int Damage;
