@@ -3,7 +3,7 @@ public class Enemy2 : Fighter   // mer enemy type 2
 
 public  void SpecialAttack(Fighter target)
     {
-    target.TakeDamage(Health + 5);
+      target.Health += 5;
     }
 
 }
