@@ -29,7 +29,7 @@ public class Fighter
 
         if (actualDamage > 0)
         {
-            Health -= actualDamage;
+            Health -= Damage;
         }
     }
 
