@@ -45,12 +45,26 @@ skriv in siffran på det du vill ska hända!
             Thread.Sleep(100);
             }
             Console.Clear();
+            Console.WriteLine("Vill du slåss eller fly skriva (ja) om du vill fly annars tryck på enter");
+            string fly = Console.ReadLine();
+            if(fly?.ToLower() == "ja")
+            {
+                break;
+            }
+            else
+            {
             Console.WriteLine($"{player.Name}: defence {player.Defense}");
             Console.WriteLine($"{enemy.Name}: defence {enemy.Defense}");
             Console.WriteLine("");
             enemy.chooseAction(player);
             player.chooseAction(enemy);
             player.GainXp(5);
+            int random = Random.Shared.Next(0,2);
+            if(random == 1)
+                {
+                player.QuotePower();
+                }
+            }
             
                 
 
@@ -104,8 +118,8 @@ skriv in siffran på det du vill ska hända!
         {
             Console.Clear();
             Console.WriteLine("skriv in vad du vill säga för quotes! skriv avsluta om du vill tillbaka till menyn");
-            string QuoteVal = Console.ReadLine().ToLower();
-            if (QuoteVal == "avsluta")
+            string QuoteVal = Console.ReadLine();
+            if (QuoteVal.ToLower() == "avsluta")
             {
                 break;
             }

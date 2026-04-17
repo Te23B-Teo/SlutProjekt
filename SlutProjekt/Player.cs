@@ -28,6 +28,20 @@ public class Player : Fighter
     }
     }
 
+    public void QuotePower()
+    {
+    if (Quotes.Count == 0)
+    {
+        Console.WriteLine("Du har inga quotes!");
+        return;
+    }
+        int antal = Random.Shared.Next(Quotes.Count);
+        Console.WriteLine();
+        Console.WriteLine($"{Name} Säger: {Quotes[antal]}");
+        Health += 5;
+        Console.WriteLine("(du fick +5 hp för ditt quote)");
+    }
+
     public void GainXp(int amount)
     {
         Xp += amount;
