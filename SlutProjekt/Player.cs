@@ -22,9 +22,10 @@ public class Player : Fighter
         Xp -= 100;
 
         Damage += 2;
-        Health += 10;
+        Health += 5;
 
         Console.WriteLine($"Level up! Du är nu level {Level}");
+        Thread.Sleep(1000);
     }
     }
 
@@ -32,6 +33,7 @@ public class Player : Fighter
     {
     if (Quotes.Count == 0)
     {
+        Console.WriteLine();
         Console.WriteLine("Du har inga quotes!");
         return;
     }
@@ -39,7 +41,8 @@ public class Player : Fighter
         Console.WriteLine();
         Console.WriteLine($"{Name} Säger: {Quotes[antal]}");
         Health += 5;
-        Console.WriteLine("(du fick +5 hp för ditt quote)");
+        Console.WriteLine();
+        Console.WriteLine("(+5 hp för Quote)");
     }
 
     public void GainXp(int amount)
