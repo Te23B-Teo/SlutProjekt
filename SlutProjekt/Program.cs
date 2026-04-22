@@ -18,7 +18,7 @@ skriv in siffran på det du vill ska hända!
 
     int menyVal;
 
-    if (!int.TryParse(input, out menyVal))
+    if (!int.TryParse(input, out menyVal))    // checkar så att svaret är inom ramarna för vad jag vill
     {
         Console.Clear();
         Console.WriteLine($"{input} kan du inte skriva! Skriv en siffra (1-4)");
@@ -27,7 +27,7 @@ skriv in siffran på det du vill ska hända!
     }
 
 
-    if (menyVal == 1)
+    if (menyVal == 1)   // random vilken enemy man ska möta
     {
         Fighter enemy;
 
