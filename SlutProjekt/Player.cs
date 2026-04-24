@@ -22,7 +22,7 @@ public class Player : Fighter
             Xp -= 100;
 
             Damage += 2;
-            Health += 5;
+            MaxHealth += 5;
 
             Console.WriteLine($"Level up! Du är nu level {Level}");
             Thread.Sleep(1000);
