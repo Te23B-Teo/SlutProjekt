@@ -2,8 +2,8 @@ public class Enemy : Fighter   // mer enemy type 1
 {
 
 
-    public  void SpecialAttack(Fighter target)
+    public void SpecialAttack(Fighter target)
     {
-    target.TakeDamage(Damage + 5);
+        target.TakeDamage(Damage + 5);
     }
 }

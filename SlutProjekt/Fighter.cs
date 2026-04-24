@@ -24,12 +24,11 @@ public class Fighter
 
     public void TakeDamage(int amount)
     {
-
         int actualDamage = amount - Defense;
 
         if (actualDamage > 0)
         {
-            Health -= Damage;
+            Health -= actualDamage;
         }
     }
 
